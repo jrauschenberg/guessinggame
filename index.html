@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Guess the Number</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <script src="data_generator.js"></script>
+  </head>
+
+  <body>
+      <div class="container">
+      <div class="jumbotron">
+        <h1>Guess the Number I'm Thinking Of</h1>
+        <p class="lead" id="intro">You can't fathom the depths of my mind. Or can you?</p>
+        <form class="lead" id="info">
+        My Guess:<br>
+        <input type="text" id="username" value="Number from 1-100">
+        </form>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Check My Guess</a></p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Play Again</a>
+        <a class="btn btn-lg btn-success" href="#" role="button">Give Me a Hint</a></p>
+        <p id="result" style="color:blue">You are cold. You have 5 guesses remaining.<p>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; John Rauschenberg</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+  </body>
+
+</html>
