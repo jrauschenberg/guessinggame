@@ -1,5 +1,9 @@
 /* **** Global Variables **** */
 // try to elminate these global variables in your project, these are here just to start.
+
+// this would be a start!
+
+(function() {
 $(document).ready(function() {
   $('#info').keypress(function(event) {
   if (event.which == 13) {
@@ -126,3 +130,5 @@ function playAgain(){
 
 /* **** Event Listeners/Handlers ****  */
 
+// Now everything is scoped to this Immediately Invoked Function!
+})();
