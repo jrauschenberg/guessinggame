@@ -30,9 +30,10 @@
         <input type="text" id="guess" value="Number from 1-100">
         </form>
         <p><a class="btn btn-lg btn-success" href="#" role="button" id="check" onclick="playersGuessSubmission()">Check My Guess</a></p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Play Again</a>
-        <a class="btn btn-lg btn-success" href="#" role="button">Give Me a Hint</a></p>
-        <p id="result" style="color:blue">You are cold. You have 5 guesses remaining.<p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button" id="playagain" onclick="playAgain()">Play Again</a>
+        <a class="btn btn-lg btn-success" href="#" role="button" id="hint" onclick="provideHint()">Give Me a Hint</a></p>
+        <p id="result" style="color:blue">You have 5 guesses remaining.<p>
+        <p id="pastguesses"></p>
       </div>
 
       <footer class="footer">
