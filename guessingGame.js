@@ -8,6 +8,11 @@ $(document).ready(function() {
  });
 });
 
+var winningNumber = generateWinningNumber();
+var totalGuesses = 5;
+var pastGuesses = [];
+var playersGuess;
+
 /* **** Guessing Game Functions **** */
 
 // Generate the Winning Number
@@ -19,14 +24,15 @@ function generateWinningNumber(){
 // Fetch the Players Guess
 
 function playersGuessSubmission(){
-	var playersGuess = Number($('#guess').val());
+	playersGuess = Number($('#guess').val());
   $('#guess').val("");
   checkGuess(playersGuess);
 }
 
+
 // Determine if the next guess should be a lower or higher number
 
-function lowerOrHigher(playersGuess, winningNumber){
+function lowerOrHigher(){
   if (playersGuess < winningNumber) {
     return("lower");
   }
@@ -35,17 +41,15 @@ function lowerOrHigher(playersGuess, winningNumber){
   }
 }
 
-function guessMessage(playersGuess, winningNumber){
+function guessMessage(){
   var amountOff = Math.abs(playersGuess - winningNumber);
-  return("Your guess is " + lowerOrHigher(playersGuess) + " and within " + Math.ceil(amountOff/5)*5 + " of the number I'm thinking of.");
+  return("Your guess is " + lowerOrHigher(playersGuess, winningNumber) + " and within " + Math.ceil(amountOff/5)*5 + " of the number I'm thinking of.");
 }
 
 // Check if the Player's Guess is the winning number 
 
-function checkGuess(playersGuess){
-  var winningNumber = winningNumber || generateWinningNumber();
-  var totalGuesses = totalGuesses || 5;
-  var pastGuesses = pastGuesses || [];
+function checkGuess(){
+
   if (isNaN(playersGuess) || playersGuess < 1 || playersGuess > 100) {
       $('#result').text("Not a valid number!");
       $('#result').css("color", "red");
@@ -63,7 +67,7 @@ function checkGuess(playersGuess){
   pastGuesses.push(playersGuess);
   $('#pastguesses').text("Past guesses: " + pastGuesses.join(", "));
   totalGuesses -= 1;
-  
+
 	if (playersGuess === winningNumber) {
     $('#result').text("You won!");
     $('#result').css("color", "green");
@@ -119,7 +123,6 @@ function playAgain(){
   $('#hint').show();
   $('#check').show();*/
 }
-
 
 /* **** Event Listeners/Handlers ****  */
 
